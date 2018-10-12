@@ -8,13 +8,12 @@ budgetRouter.post("/", (req, res) => {
   const newBudget = new Budget(budgetInfo);
   newBudget
     .save()
-    //Budget.create(req.body)
     .then(savedBudget => {
       res.status(200).json(savedBudget);
     })
     .catch(err => {
       res.status(500).json({
-        error: "Could not save budget",
+        error: "Could not save budget"
       });
     });
 });

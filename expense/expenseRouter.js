@@ -1,7 +1,5 @@
 const express = require("express");
 const Expense = require("./expenseModel");
-const Category = require("../category/categoryModel");
-const Budget = require("../budget/budgetModel");
 
 const expenseRouter = express.Router();
 
@@ -16,7 +14,7 @@ expenseRouter.post("/", (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        error: "Could not add the expense.",
+        error: "Could not add the expense."
       });
     });
 });
@@ -30,7 +28,7 @@ expenseRouter.get("/", (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        error: "Could not retrieve expenses.",
+        error: "Could not retrieve expenses."
       });
     });
 });
