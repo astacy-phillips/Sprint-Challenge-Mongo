@@ -5,11 +5,12 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const ExpenseSchema = new mongoose.Schema({
   amount: {
     type: Number,
-    required: true,
+    default: 0,
   },
   description: {
     type: String,
     required: true,
+    index: true,
   },
   budget: {
     type: ObjectId,
