@@ -6,9 +6,9 @@ const budgetRouter = express.Router();
 budgetRouter.post("/", (req, res) => {
   const budgetInfo = req.body;
   const newBudget = new Budget(budgetInfo);
-
   newBudget
     .save()
+    //Budget.create(req.body)
     .then(savedBudget => {
       res.status(200).json(savedBudget);
     })
